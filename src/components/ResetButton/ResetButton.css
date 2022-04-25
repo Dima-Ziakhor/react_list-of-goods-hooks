@@ -1,3 +1,7 @@
 .button--reset {
   background-color: rgb(209, 23, 23);
 }
+
+.button--reset:hover {
+  background-color: rgb(197, 15, 15);
+}

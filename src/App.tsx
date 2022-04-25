@@ -6,6 +6,7 @@ import { ReverseButton } from './components/ReverseButton';
 import { SortAlphabeticallyButton }
   from './components/SortAlphabeticallyButton';
 import { ResetButton } from './components/ResetButton';
+import { SortByLength } from './components/SortByLength';
 
 const goodsFromServer: string[] = [
   'Dumplings',
@@ -26,12 +27,6 @@ const App: React.FC = () => {
   const [isListVisible, setIsListVisible] = useState(false);
   const [isButtonVisible, setIsButtonVisible] = useState(true);
 
-  const handleSortByLength = () => {
-    if (goods) {
-      setGoods([...goods].sort((a, b) => a.length - b.length));
-    }
-  };
-
   useEffect(() => {
     setInitialGoods(goodsFromServer);
   }, []);
@@ -44,7 +39,7 @@ const App: React.FC = () => {
           isButtonVisible && (
             <button
               type="button"
-              className="App__button"
+              className="button button--start"
               onClick={() => {
                 setIsListVisible(true);
                 setIsButtonVisible(false);
@@ -78,13 +73,10 @@ const App: React.FC = () => {
                 setGoods={setGoods}
               />
 
-              <button
-                type="button"
-                className="App__button"
-                onClick={handleSortByLength}
-              >
-                Sort by length
-              </button>
+              <SortByLength
+                goods={goods}
+                setGoods={setGoods}
+              />
             </div>
           )
         }

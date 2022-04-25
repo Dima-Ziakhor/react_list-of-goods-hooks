@@ -1,3 +1,7 @@
 .button--sort-alphabetically {
   background-color: rgb(0, 255, 221);
 }
+
+.button--sort-alphabetically:hover {
+  background-color: rgb(0, 192, 166);
+}

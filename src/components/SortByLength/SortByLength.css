@@ -1,0 +1,7 @@
+.button--sort-by-length {
+  background-color: rgb(255, 0, 140);
+}
+
+.button--sort-by-length:hover {
+  background-color: rgb(224, 0, 123);
+}
